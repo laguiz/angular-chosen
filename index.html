@@ -13,11 +13,11 @@
 <body>
 <div class="container" ng-controller="RecipientsController">
   <h1>Chosen</h1>
-  <select data-placeholder="Choose a Recipient" multiple class="span4 chzn-select" chosen
-      ng-model="recipients" ng-options="recipient.name for recipient in recipientsList">
+  <select data-placeholder="Choose a Recipient" multiple class="span4 chzn-select" chosen ng-model="recipientsSelected" ng-options="recipient.login group by recipient.office.name for recipient in recipientsList">
   </select>
 
-  <p ng-repeat="recipient in recipients"><strong>{{recipient.name}}</strong></p>
+  <p ng-repeat="recipient in recipientsSelected"><strong>{{recipient.login}}</strong></p>
+
 </div>
 </body>
 </html>
